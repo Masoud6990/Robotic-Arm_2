@@ -51,7 +51,7 @@ set_seed(1)
 combinedData = numpy.empty([0, 3364])
 
 myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/data _ decipated _ filtered/EEGData_unit.mat")
-#myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/data _ decipated _ filtered/EEGData_unit_26062024.mat")
+
 
 print(myKeys)
 eegData = myKeys['EEGData_unit']
