@@ -30,7 +30,7 @@ set_seed(1)
 rScaler = RobustScaler(with_centering=True, with_scaling=True, quantile_range=(20, 100-20), unit_variance=True)
 
 # load the train data
-X = loadtxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/EEGData_512_ktu.csv', delimiter=',')
+X = loadtxt('"Saving path 1"/EEGData_512_ktu.csv', delimiter=',')
 print(X.shape)
 
 # shuffle the training data
@@ -134,7 +134,7 @@ pyplot.show()
 
 #==================================
 
-model.save("/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/model_conv1d.h5")
+model.save(" "Saving path 2" /model_conv1d.h5")
 
 # load the best model
 saved_model = load_model('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5')
