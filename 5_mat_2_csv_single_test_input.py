@@ -54,7 +54,7 @@ print (test_dir)
 test_file = input("MyTestFile")
 print (test_file)
 
-myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/files/" + test_dir + "/" + test_file + ".mat")
+myKeys = loadmat("-----/" + test_dir + "/" + test_file + ".mat")
 print(myKeys)
 eegData = myKeys['eeg_handle_re']
 print(eegData.shape)
@@ -72,5 +72,5 @@ my_pca.fit(eegData)
 print(my_pca.components_.shape)
 combinedData = numpy.append(combinedData, my_pca.components_.flatten().reshape(1, 3364), axis=0)
 
-savetxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/single_test_input.csv', combinedData, delimiter=',')
+savetxt('-----/single_test_input.csv', combinedData, delimiter=',')
 
