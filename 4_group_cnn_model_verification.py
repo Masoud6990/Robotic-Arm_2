@@ -18,7 +18,7 @@ set_seed(1)
 rScaler = RobustScaler(with_centering=True, with_scaling=True, quantile_range=(20, 100-20), unit_variance=True)
 
 # load the test data
-X = loadtxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/combined_test_eeg.csv', delimiter=',')
+X = loadtxt('"Saving path 4" /combined_test_eeg.csv', delimiter=',')
 
 # get the expected outcome 
 y_real = X[:, -1]
