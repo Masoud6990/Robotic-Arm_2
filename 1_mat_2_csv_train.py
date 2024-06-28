@@ -50,7 +50,7 @@ set_seed(1)
 
 combinedData = numpy.empty([0, 3364])
 
-myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/data _ decipated _ filtered/EEGData_unit.mat")
+myKeys = loadmat(" Data path in .mat format")
 
 
 print(myKeys)
@@ -83,5 +83,5 @@ for i in range (398):
 
 wholeData = numpy.append(combinedData, eegDataAllLabels.reshape(len(eegDataAllLabels), 1), axis=1)
 
-savetxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/EEGData_512_ktu.csv', wholeData, delimiter=',')
+savetxt(' "Saveing path" /EEGData_512_ktu.csv', wholeData, delimiter=',')
 
