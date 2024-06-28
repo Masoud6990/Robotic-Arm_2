@@ -30,7 +30,7 @@ input = my_input.transpose()
 input = input.reshape(len(input), 30, 58)
 
 # load the model
-model = load_model('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5')
+model = load_model('"Saving path 2"/best_model.h5')
 
 # get the "predicted class" outcome
 y_hat = model.predict(input) 
