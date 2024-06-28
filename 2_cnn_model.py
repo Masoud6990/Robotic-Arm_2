@@ -30,7 +30,7 @@ set_seed(1)
 rScaler = RobustScaler(with_centering=True, with_scaling=True, quantile_range=(20, 100-20), unit_variance=True)
 
 # load the train data
-X = loadtxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/EEGData_512_ktu.csv', delimiter=',')
+X = loadtxt('-----/EEGData_512_ktu.csv', delimiter=',')
 print(X.shape)
 
 # shuffle the training data
@@ -110,7 +110,7 @@ model.compile(loss=sparse_categorical_crossentropy, optimizer=adam, metrics=['ac
 
 # simple early stopping
 es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=200)
-mc = ModelCheckpoint('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5', monitor='val_accuracy', mode='max', verbose=1, save_best_only=True)
+mc = ModelCheckpoint('-----/saved/best_model.h5', monitor='val_accuracy', mode='max', verbose=1, save_best_only=True)
 
 hist = model.fit(input, Y_train, batch_size=32, epochs=300, verbose=1, validation_data=(testinput, Y_test), steps_per_epoch=None, callbacks=[es, mc])
 
@@ -134,10 +134,10 @@ pyplot.show()
 
 #==================================
 
-model.save("/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/model_conv1d.h5")
+model.save("-----/model_conv1d.h5")
 
 # load the best model
-saved_model = load_model('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5')
+saved_model = load_model('-----/best_model.h5')
 # evaluate the best model
 _, train_acc = saved_model.evaluate(input, Y_train, verbose=1)
 _, test_acc = saved_model.evaluate(testinput, Y_test, verbose=1)
