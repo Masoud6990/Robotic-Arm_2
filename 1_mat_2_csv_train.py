@@ -83,5 +83,5 @@ for i in range (398):
 
 wholeData = numpy.append(combinedData, eegDataAllLabels.reshape(len(eegDataAllLabels), 1), axis=1)
 
-savetxt(' "Saveing path" /EEGData_512_ktu.csv', wholeData, delimiter=',')
+savetxt(' "Saving path 1" /EEGData_512_ktu.csv', wholeData, delimiter=',')
 
