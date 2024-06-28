@@ -17,7 +17,7 @@ set_seed(1)
 rScaler = RobustScaler(with_centering=True, with_scaling=True, quantile_range=(20, 100-20), unit_variance=True)
 
 # load the test data
-X = loadtxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/single_test_input.csv', delimiter=',')
+X = loadtxt('-----/single_test_input.csv', delimiter=',')
 
 my_input = rScaler.fit_transform(X[0:1740].reshape(1, 1740).transpose())
 single_input = my_input.transpose()
@@ -26,7 +26,7 @@ single_input = my_input.transpose()
 single_input = single_input.reshape(1, 30, 58)
 
 # load the model
-model = load_model('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5')
+model = load_model('-----/best_model.h5')
 
 # get the "predicted class" outcome
 y_hat = model.predict(single_input) 
