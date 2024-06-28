@@ -18,7 +18,7 @@ set_seed(1)
 rScaler = RobustScaler(with_centering=True, with_scaling=True, quantile_range=(20, 100-20), unit_variance=True)
 
 # load the test data
-X = loadtxt('"Saving path 4" /combined_test_eeg.csv', delimiter=',')
+X = loadtxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/combined_test_eeg.csv', delimiter=',')
 
 # get the expected outcome 
 y_real = X[:, -1]
@@ -30,7 +30,7 @@ input = my_input.transpose()
 input = input.reshape(len(input), 30, 58)
 
 # load the model
-model = load_model('"Saving path 2"/best_model.h5')
+model = load_model('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/best_model.h5')
 
 # get the "predicted class" outcome
 y_hat = model.predict(input) 
