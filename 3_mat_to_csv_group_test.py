@@ -42,7 +42,7 @@ combinedData = numpy.empty([0, 3364])
 labelOne = numpy.ones((22, 1))
 
 for i in range (22):
-	myKeys = loadmat(" "Saving path 3 for single EEG" /Yes/eegreYes" + str(i+1) + ".mat")
+	myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/files/Yes/eegreYes" + str(i+1) + ".mat")
 	print(myKeys)
 	eegData_re = myKeys['eeg_handle_re']
 	eegData_orig = eegData_re.reshape(64, 512)
@@ -59,7 +59,7 @@ for i in range (22):
 labelZero = numpy.zeros((22, 1))
 
 for i in range (22):
-	myKeys = loadmat(""Saving path 3 for single EEG" /No/eegreNo" + str(i+1) + ".mat")
+	myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/files/No/eegreNo" + str(i+1) + ".mat")
 	print(myKeys)
 	eegData_re = myKeys['eeg_handle_re']
 	eegData_orig = eegData_re.reshape(64, 512)
@@ -77,5 +77,5 @@ for i in range (22):
 labels = numpy.append(labelOne, labelZero, axis=0)
 
 combinedData = numpy.append(combinedData, labels, axis=1)
-savetxt('"Saving path 4"/combined_test_eeg.csv', combinedData, delimiter=',')
+savetxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/combined_test_eeg.csv', combinedData, delimiter=',')
 
