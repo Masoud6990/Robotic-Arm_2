@@ -50,8 +50,8 @@ set_seed(1)
 
 combinedData = numpy.empty([0, 3364])
 
-myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/data _ decipated _ filtered/EEGData_unit.mat")
-#myKeys = loadmat("/content/drive/MyDrive/Colab Notebooks/data _ decipated _ filtered/EEGData_unit_26062024.mat")
+myKeys = loadmat("-----/EEGData_unit.mat")
+
 
 print(myKeys)
 eegData = myKeys['EEGData_unit']
@@ -65,9 +65,6 @@ eegDataAllLabels[yes_input] = 1
 no_input = eegDataAllLabels == 'No'
 eegDataAllLabels[no_input] = 0
 
-#breakpoint()
-#eegDataAllSamples=numpy.array(eegDataAllSamples)
-#print(eegDataAllSamples.reshape(64, 512))
 
 for i in range (398):
 	eegData_orig = eegDataAllSamples[i].reshape(64, 512)
@@ -83,5 +80,5 @@ for i in range (398):
 
 wholeData = numpy.append(combinedData, eegDataAllLabels.reshape(len(eegDataAllLabels), 1), axis=1)
 
-savetxt('/content/drive/MyDrive/Colab Notebooks/Swati_files_single out put/saved/EEGData_512_ktu.csv', wholeData, delimiter=',')
+savetxt('-----/EEGData_512_ktu.csv', wholeData, delimiter=',')
 
